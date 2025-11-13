@@ -1,10 +1,18 @@
-import validaciones
+from validaciones import num_mayor
+import ordenamiento
+import filtrar_paises
+import estadistica
+from crud import creacion_csv,cargar_datos,añadir_csv
+
 def principal():
-    #x = validaciones.texto_vacio
-    pass
-
-
-
+    
+    lista = paises_en_lista
+    creacion_csv()
+    for pais in enumerate(lista):
+        añadir_csv(pais)
+    
+    paises = cargar_datos()
+    opciones()
 
 
 def paises_en_lista():
@@ -31,9 +39,38 @@ def paises_en_lista():
         {"nombre":"suecia","poblacion":10353442,"superficie":450295,"continente":"europa"},
         {"nombre":"finlandia","poblacion":5540720,"superficie":338424,"continente":"europa"}
     ]
-    return paises_en_lista
+    return listado_paises
 
+def menu():
+    print("""
+            
+            --- MENÚ PRINCIPAL ---
+            (1) Buscar país por nombre
+            (2) Filtrar países
+            (3) Ordenar países
+            (4) Estadísticas
+            
+            """)
 
+def opciones():
+    menu()
+    while True:
+        opcion = num_mayor()
+        
+        if opcion > 4:
+            print("ERROR: Valor inválido, vuelve a intentarlo.")
+            continue
+        break
+    
+    match opcion:
+        case 1:
+            pass
+        case 2:
+            pass
+        case 3:
+            pass
+        case 4:
+            pass
 
 if __name__ =="__main__":
     principal()
