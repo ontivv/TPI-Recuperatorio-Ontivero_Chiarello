@@ -3,6 +3,7 @@ def texto_vacio(): # t es un string
         texto = input().lower().strip()
         if  len(texto) > 0:
             return texto
+        print("ERROR: Debe escribir algo.")
 
 def texto_existente(texto,lista):
     for dic in lista:
