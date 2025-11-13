@@ -1,19 +1,19 @@
-from validaciones import num_mayor
+from validaciones import num_mayor,texto_vacio
 import ordenamiento
 import filtrar_paises
 import estadistica
 from crud import creacion_csv,cargar_datos,añadir_csv
+from bucarnombre import buscar_pais
 
 def principal():
-    
-    lista = paises_en_lista
     creacion_csv()
-    for pais in enumerate(lista):
-        añadir_csv(pais)
+    listado_paises = paises_en_lista()
     
-    paises = cargar_datos()
+    for pais in listado_paises:
+        añadir_csv(pais)
     opciones()
-
+        
+    
 
 def paises_en_lista():
     listado_paises = [
@@ -49,28 +49,50 @@ def menu():
             (2) Filtrar países
             (3) Ordenar países
             (4) Estadísticas
-            
+            (5) Salir
             """)
 
 def opciones():
-    menu()
     while True:
-        opcion = num_mayor()
         
-        if opcion > 4:
-            print("ERROR: Valor inválido, vuelve a intentarlo.")
-            continue
-        break
-    
-    match opcion:
-        case 1:
-            pass
-        case 2:
-            pass
-        case 3:
-            pass
-        case 4:
-            pass
+        menu()
+        while True:
+            opcion = num_mayor()
+            
+            if opcion > 5:
+                print("ERROR: Valor inválido, vuelve a intentarlo.")
+                continue
+            break
+        
+        match opcion:
+            case 1:
+                print ("ingresa el nombre del pais que buscas")
+                nombre = texto_vacio()
+                print (buscar_pais(nombre,paises_en_lista()))
+            case 2:
+                opciones = input("""
+                       a:para filtro de continrnete
+                       b:para filtro de poblacion
+                       c:para filtro de superficie
+                       """).lower()
+                opcion_filtrado(opciones)
+            case 3:
+                pass
+            case 4:
+                pass
+            case 5:
+                print ("nos vemos")
+                break
+
+def opcion_filtrado(x):
+    match x:
+        case "a":
+            print ("ingresa un continente")
+            continente = texto_vacio()
+            print (f_continente(continente,paises_en_lista()))
+
+
+
 
 if __name__ =="__main__":
     principal()
