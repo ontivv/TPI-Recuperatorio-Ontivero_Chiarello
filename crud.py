@@ -11,15 +11,15 @@ def añadir_csv(dic):  #añade un diccionario a la lista
     if os.path.exists("paises.csv"): # verifica si paises csv ya esta creado si es así sigue
         with open("paises.csv","a")as archivo: #abrimos en modo lectura pero sin perder datos
             escritor = csv.DictWriter(archivo,fieldnames=["nombre","poblacion","superficie","continente"])
-            escritor.writerow({"nombre":dic["nombre"],"poblacion":dic["poblacion"],"superficie":dic["superficie"],"continente":dic["continente"]})   #añade el diccionario que pasamos como parametro
+            escritor.writerow({"nombre":dic["nombre"],"poblacion":dic["poblacion"],"superficie":dic["superficie"],"continente":dic["continente"]})   #añade el diccionario que al csv
             
-def actualizar_csv(lista_libros):  #hace cambios en el csv
+def actualizar_csv(lista_paises):  #hace cambios en el csv
     lista = []
     if os.path.exists("paises.csv"): # verifica si paises csv ya esta creado si es así sigue
         with open("paises.csv","w")as archivo: #abrimos en modo escritura
-            escritor = csv.DictWriter(archivo,fieldnames=["nombre","poblacion","superfie","continente"]) 
+            escritor = csv.DictWriter(archivo,fieldnames=["nombre","poblacion","superficie","continente"]) 
             escritor.writeheader()
-            for i in lista_libros: #bucle que reescribe el diccionario
+            for i in lista_paises: #bucle que reescribe el diccionario
                     escritor.writerow({"nombre":i["nombre"],"poblacion":i["poblacion"],"superficie":i["superficie"],"continente":i["continente"]})
         
 def cargar_datos(): #carga una lista con diccionarios a una variable
@@ -34,3 +34,12 @@ def cargar_datos(): #carga una lista con diccionarios a una variable
         print("ERROR: paises.csv no existe.")
         return[]
 
+
+def crea_y_añadir_lista(lista_paises):
+    if not os.path.exists("paises.csv"): # verifica si paises csv ya esta creado si es así sigue
+        with open("paises.csv","w")as archivo: #abrimos en modo escritura
+            escritor = csv.DictWriter(archivo,fieldnames=["nombre","poblacion","superficie","continente"]) 
+            escritor.writeheader()
+            for i in lista_paises: #bucle que reescribe el diccionario
+                escritor.writerow({"nombre":i["nombre"],"poblacion":i["poblacion"],"superficie":i["superficie"],"continente":i["continente"]})
+                    

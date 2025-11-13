@@ -1,16 +1,13 @@
-from validaciones import num_mayor,texto_vacio
+from validaciones import num_mayor,texto_vacio,num_no_negativo
 import ordenamiento
-import filtrar_paises
-import estadistica
-from crud import creacion_csv,cargar_datos,añadir_csv
+from filtrar_paises import *
+from crud import cargar_datos,crea_y_añadir_lista
 from bucarnombre import buscar_pais
 
 def principal():
-    creacion_csv()
-    listado_paises = paises_en_lista()
-    
-    for pais in listado_paises:
-        añadir_csv(pais)
+    crea_y_añadir_lista(paises_en_lista())
+    listado_paises = cargar_datos()
+
     opciones()
         
     
@@ -89,9 +86,25 @@ def opcion_filtrado(x):
         case "a":
             print ("ingresa un continente")
             continente = texto_vacio()
-            print (f_continente(continente,paises_en_lista()))
-
-
+            if continente in ["america","europa","africa","oceania","asia"]:
+                print (f_continente(continente,paises_en_lista()))
+            else:
+                print (f"ERROR: {continente} no registrado")    
+        case "b":
+            print ("introduce el minimo numero de poblcion")
+            minimo = num_no_negativo()
+            print ("introduce el minimo numero de poblcion")
+            maximo = num_no_negativo()
+            print (f_poblacion(minimo,maximo,paises_en_lista()))
+        case "c":
+            print ("introduce el minimo tamaño de superficie")
+            minimo = num_no_negativo()
+            print ("introduce el maximo tamaño de superficie")
+            maximo = num_no_negativo()
+            print (f_superficie(minimo,maximo,paises_en_lista()))
+        case other:
+            print ("opcion no valida")
+            
 
 
 if __name__ =="__main__":
