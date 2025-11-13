@@ -1,16 +1,16 @@
 from validaciones import num_mayor,texto_vacio,num_no_negativo
-import ordenamiento
-from filtrar_paises import *
+from ordenamiento import submenu_match_orden
 from crud import cargar_datos,crea_y_añadir_lista
 from bucarnombre import buscar_pais
+from estadistica import match_estadisticas
+from filtrar_paises import f_continente,f_poblacion,f_superficie
 
-def principal():
+def principal():# inicia la creacion y adicion de la lista y luego carga el menú principal
     crea_y_añadir_lista(paises_en_lista())
     listado_paises = cargar_datos()
 
     opciones()
-        
-    
+
 
 def paises_en_lista():
     listado_paises = [
@@ -49,7 +49,7 @@ def menu():
             (5) Salir
             """)
 
-def opciones():
+def opciones(): #Menú principal
     while True:
         
         menu()
@@ -68,17 +68,17 @@ def opciones():
                 print (buscar_pais(nombre,paises_en_lista()))
             case 2:
                 opciones = input("""
-                       a:para filtro de continrnete
-                       b:para filtro de poblacion
-                       c:para filtro de superficie
-                       """).lower()
+                    (a) Filtro por continente
+                    (b) Filtro por poblacion
+                    (c) Filtro por superficie
+                    """).lower()
                 opcion_filtrado(opciones)
             case 3:
-                pass
+                submenu_match_orden()
             case 4:
-                pass
+                match_estadisticas()
             case 5:
-                print ("nos vemos")
+                print ("¡Hasta Luego!")
                 break
 
 def opcion_filtrado(x):
