@@ -68,10 +68,10 @@ def opciones():
                 print (buscar_pais(nombre,paises_en_lista()))
             case 2:
                 opciones = input("""
-                       a:para filtro de continrnete
-                       b:para filtro de poblacion
-                       c:para filtro de superficie
-                       """).lower()
+                    a:para filtro de continente
+                    b:para filtro de poblacion
+                    c:para filtro de superficie
+                    """).lower()
                 opcion_filtrado(opciones)
             case 3:
                 pass
