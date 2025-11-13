@@ -1,6 +1,6 @@
-def texto_vacio():
+def texto_vacio(): # t es un string
     while True:
-        texto = input("").lower().strip()
+        texto = input().lower().strip()
         if  len(texto) > 0:
             return texto
 
@@ -16,7 +16,7 @@ def numero_entero():
             x = int(input(""))
             return x
         except ValueError:
-            pass
+            print (f"ERROR:{x} no valido")
 
 def num_mayor():
     while True:
@@ -29,3 +29,13 @@ def num_mayor():
         except ValueError:
             print("ERROR: Valor inválido, intente nuevamente.")
 
+def num_no_negativo():
+    while True:
+        try:
+            x = int(input(""))
+            if x >= 0:
+                return x
+            else:
+                print("ERROR: Valor inválido, intente nuevamente.")
+        except ValueError:
+            print("ERROR: Valor inválido, intente nuevamente.")
