@@ -6,13 +6,13 @@ from estadistica import match_estadisticas
 from filtrar_paises import f_continente,f_poblacion,f_superficie
 
 def principal():# inicia la creacion y adicion de la lista y luego carga el menú principal
-    crea_y_añadir_lista(paises_en_lista())
-    listado_paises = cargar_datos()
+    crea_y_añadir_lista(paises_en_lista()) #crea el csv usando la lista de paises si no a sido creada
+    listado_paises = cargar_datos() #carga la lista de paises con csv (tambien se puede usar la funcion (paises_en_lista))
 
     opciones()
 
 
-def paises_en_lista():
+def paises_en_lista(): #lista de paises 
     listado_paises = [
         {"nombre":"argentina","poblacion":46994384,"superficie":2780400,"continente":"america"},
         {"nombre":"brasil","poblacion":220051512,"superficie":8515770,"continente":"america"},
@@ -38,7 +38,7 @@ def paises_en_lista():
     ]
     return listado_paises
 
-def menu():
+def menu(): #menu con una lista de opciones para imprimir
     print("""
             
             --- MENÚ PRINCIPAL ---
@@ -52,11 +52,11 @@ def menu():
 def opciones(): #Menú principal
     while True:
         
-        menu()
+        menu()  #se va a imprimir el menu en la consola
         while True:
-            opcion = num_mayor()
+            opcion = num_mayor() #permite elegir una opcion del menu
             
-            if opcion > 5:
+            if opcion > 5:  #mesaje en caso de que el usuario introdusca una opcion no valida
                 print("ERROR: Valor inválido, vuelve a intentarlo.")
                 continue
             break
@@ -64,8 +64,8 @@ def opciones(): #Menú principal
         match opcion:
             case 1:
                 print ("ingresa el nombre del pais que buscas")
-                nombre = texto_vacio()
-                print (buscar_pais(nombre,paises_en_lista()))
+                nombre = texto_vacio() 
+                print (buscar_pais(nombre,paises_en_lista()))   
             case 2:
                 opciones = input("""
                     (a) Filtro por continente
@@ -81,29 +81,29 @@ def opciones(): #Menú principal
                 print ("¡Hasta Luego!")
                 break
 
-def opcion_filtrado(x):
+def opcion_filtrado(x):   #permite la opciones de filtrdo de paises
     match x:
         case "a":
             print ("ingresa un continente")
-            continente = texto_vacio()
-            if continente in ["america","europa","africa","oceania","asia"]:
+            continente = texto_vacio()  #pide al usuario que ingrese un continente
+            if continente in ["america","europa","africa","oceania","asia"]: #busca si el continente existe o esta registrado
                 print (f_continente(continente,paises_en_lista()))
             else:
-                print (f"ERROR: {continente} no registrado")    
+                print (f"ERROR: {continente} no registrado")      #se imprime en caso que el continente no este registrado
         case "b":
-            print ("introduce el minimo numero de poblcion")
+            print ("introduce el minimo numero de poblcion")  
             minimo = num_no_negativo()
             print ("introduce el minimo numero de poblcion")
             maximo = num_no_negativo()
-            print (f_poblacion(minimo,maximo,paises_en_lista()))
+            print (f_poblacion(minimo,maximo,paises_en_lista()))  #manda como parametros el minimo y el maximo numero de poblacion
         case "c":
             print ("introduce el minimo tamaño de superficie")
             minimo = num_no_negativo()
             print ("introduce el maximo tamaño de superficie")
             maximo = num_no_negativo()
-            print (f_superficie(minimo,maximo,paises_en_lista()))
+            print (f_superficie(minimo,maximo,paises_en_lista()))  #manda como parametros el minimo y el maximo tamaño de superficie
         case other:
-            print ("opcion no valida")
+            print ("opcion no valida") 
             
 
 
