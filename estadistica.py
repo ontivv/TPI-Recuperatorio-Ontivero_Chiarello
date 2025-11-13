@@ -63,7 +63,6 @@ def submenu_estadisticas():
         except ValueError:
             print("ERROR: Valor inválido, intente nuevamente.")
     return opcion
-        
 
 def match_estadisticas():
     opcion = submenu_estadisticas()
