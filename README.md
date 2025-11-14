@@ -10,7 +10,7 @@ El programa en cuestión se basa en la idea de mediante el uso de un archivo CSV
 
 ## ARCHIVOS
 
-### crud.py:
+### crud.py
 Uno de los archivos más importantes de todo el programa. El codigo de este progrma es un módulo para gestionar los datos de un archivo paises.csv. Define un conjunto de funciones para realizar las operaciones básicas de CRUD sobre ese archivo. Este se encarga de la persistencia de datos, se asegura de que la información de los países se pueda guardar en el disco para no perderla cuando se cierra el programa, y se pueda leer de nuevo cuando el programa se abre.
 
 #### ¿Cómo logra esto?
