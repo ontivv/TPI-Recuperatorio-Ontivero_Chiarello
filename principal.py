@@ -92,7 +92,7 @@ def opcion_filtrado(x):   #permite la opciones de filtrdo de paises
                 print (f"ERROR: {continente} no registrado")      #se imprime en caso que el continente no este registrado
         case "b":
             print ("introduce el número mínimo de población")  
-            minimo = num_no_negativo()
+            minimo = num_no_negativo()  
             print ("introduce el número máximo de población")
             maximo = num_no_negativo()
             print (f_poblacion(minimo,maximo,paises_en_lista()))  #manda como parametros el minimo y el maximo numero de poblacion
