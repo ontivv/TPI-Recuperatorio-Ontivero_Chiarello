@@ -84,7 +84,7 @@ Esta guía le orientará sobre cómo interactuar con el programa. Al ejecutar el
 ### 1. Navegación principal
 La navegación está diseñada para ser intuitiva. Simplemente ingrese el número de la opción deseada (1-5) y presione "Enter".
 
-El programa está protegido contra entradas erróneas; si usted ingresa una opción no válida (como texto o un número fuera del rango 1-5), el sistema le notificará amablemente y le solicitará que ingrese la opción nuevamente, asegurando que la aplicación no se detenga. Tras completar la mayoría de las acciones, regresará automáticamente a este menú principal.
+El programa está protegido contra entradas erróneas; si usted ingresa una opción no válida (como texto o un número fuera del rango 1-5), el sistema le notificará y le solicitará que ingrese la opción nuevamente, asegurando que la aplicación no se detenga. Tras completar la mayoría de las acciones, regresará automáticamente a este menú principal.
 
 ### 2. Detalle de las opciones del menú
 (1) Buscar país por nombre: Esta es una búsqueda directa. El programa le solicitará que ingrese el nombre de un país y el sistema le devolverá toda la información registrada de ese país, o un aviso si no lo encuentra.
