@@ -1,7 +1,7 @@
 from validaciones import num_mayor,texto_vacio,num_no_negativo
 from ordenamiento import submenu_match_orden
 from crud import cargar_datos,crea_y_añadir_lista
-from bucarnombre import buscar_pais
+from buscar_nombre import buscar_pais
 from estadistica import match_estadisticas
 from filtrar_paises import f_continente,f_poblacion,f_superficie
 
