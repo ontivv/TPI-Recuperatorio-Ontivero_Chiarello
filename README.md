@@ -195,6 +195,4 @@ Finalmente el usuario decide terminar la sesión.
 
 ## Integrantes:
 
---- COMISIÓN 3 | PROGRAMACIÓN 1 ---
-        Santiago Ontivero 
-        Joaquín Chiarello 
+Santiago Ontivero - Joaquín Chiarello
