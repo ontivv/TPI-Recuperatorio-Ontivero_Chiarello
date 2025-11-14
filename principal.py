@@ -56,7 +56,7 @@ def opciones(): #Menú principal
         while True:
             opcion = num_mayor() #permite elegir una opcion del menu
             
-            if opcion > 5:  #mesaje en caso de que el usuario introdusca una opcion no valida
+            if opcion > 5 or opcion < 1:  #mesaje en caso de que el usuario introdusca una opcion no valida
                 print("ERROR: Valor inválido, vuelve a intentarlo.")
                 continue
             break
@@ -67,11 +67,12 @@ def opciones(): #Menú principal
                 nombre = texto_vacio() 
                 print (buscar_pais(nombre,paises_en_lista()))   
             case 2:
-                opciones = input("""
-                    (a) Filtro por continente
-                    (b) Filtro por poblacion
-                    (c) Filtro por superficie
-                    """).lower()
+                print("""
+                    (1) Filtro por continente
+                    (2) Filtro por poblacion
+                    (3) Filtro por superficie
+                    """)
+                opciones = num_mayor()
                 opcion_filtrado(opciones)
             case 3:
                 submenu_match_orden()
@@ -83,20 +84,20 @@ def opciones(): #Menú principal
 
 def opcion_filtrado(x):   #permite la opciones de filtrdo de paises
     match x:
-        case "a":
+        case 1:
             print ("ingresa un continente")
             continente = texto_vacio()  #pide al usuario que ingrese un continente
             if continente in ["america","europa","africa","oceania","asia"]: #busca si el continente existe o esta registrado
                 print (f_continente(continente,paises_en_lista()))
             else:
                 print (f"ERROR: {continente} no registrado")      #se imprime en caso que el continente no este registrado
-        case "b":
+        case 2:
             print ("introduce el minimo numero de poblcion")  
             minimo = num_no_negativo()
             print ("introduce el minimo numero de poblcion")
             maximo = num_no_negativo()
             print (f_poblacion(minimo,maximo,paises_en_lista()))  #manda como parametros el minimo y el maximo numero de poblacion
-        case "c":
+        case 3:
             print ("introduce el minimo tamaño de superficie")
             minimo = num_no_negativo()
             print ("introduce el maximo tamaño de superficie")

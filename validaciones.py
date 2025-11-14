@@ -5,13 +5,13 @@ def texto_vacio(): # t es un string
             return texto
         print("ERROR: Debe escribir algo.")
 
-def texto_existente(texto,lista):
+def texto_existente(texto,lista):  #verifica si un texto esra registrado
     for dic in lista:
         if  texto in dic["nombre"]:
             return True
     return False
 
-def numero_entero():
+def numero_entero():   #valida numeros enteros
     while True:
         try:
             x = int(input(""))
@@ -19,7 +19,7 @@ def numero_entero():
         except ValueError:
             print (f"ERROR:{x} no valido")
 
-def num_mayor():
+def num_mayor():  #validad numeros positivos
     while True:
         try:
             x = int(input(""))
@@ -30,7 +30,7 @@ def num_mayor():
         except ValueError:
             print("ERROR: Valor inválido, intente nuevamente.")
 
-def num_no_negativo():
+def num_no_negativo():  #valida numeros mayores o iguales a 0 (enteros)
     while True:
         try:
             x = int(input(""))

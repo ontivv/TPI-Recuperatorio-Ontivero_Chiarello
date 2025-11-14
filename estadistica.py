@@ -1,6 +1,6 @@
 from validaciones import num_mayor
 
-def pais_mayor_menor_poblacion(listado_paises,opcion):
+def pais_mayor_menor_poblacion(listado_paises,opcion):  #funcion para pais 
     mayor = 0
     menor = 9999999999999999990
     

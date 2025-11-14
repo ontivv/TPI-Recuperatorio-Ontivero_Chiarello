@@ -35,11 +35,11 @@ def cargar_datos(): #carga una lista con diccionarios a una variable
         return[]
 
 
-def crea_y_añadir_lista(lista_paises):
-    if not os.path.exists("paises.csv"): # verifica si paises csv ya esta creado si es así sigue
+def crea_y_añadir_lista(lista_paises): #crea el csv con la lista de paises si no esta creado
+    if not os.path.exists("paises.csv"): # verifica si paises.csv ya esta creado si no es así sigue
         with open("paises.csv","w")as archivo: #abrimos en modo escritura
             escritor = csv.DictWriter(archivo,fieldnames=["nombre","poblacion","superficie","continente"]) 
             escritor.writeheader()
             for i in lista_paises: #bucle que reescribe el diccionario
                 escritor.writerow({"nombre":i["nombre"],"poblacion":i["poblacion"],"superficie":i["superficie"],"continente":i["continente"]})
-                    
+                
