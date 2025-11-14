@@ -1,5 +1,4 @@
 # TRABAJO PRACTICO INTEGRADOR: Recuperatorio 
-## Santiago Ontivero - Joaquín Chiarello
 
 ## DESCRIPCIÓN DEL PROGRAMA:
 El programa en cuestión se basa en la idea de mediante el uso de un archivo CSV denominado "paises.csv" se analicen la información brindada por la base de datos del mismo y se puedan realizar acciones tales como:
