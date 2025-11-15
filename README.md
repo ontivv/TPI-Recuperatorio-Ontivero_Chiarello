@@ -198,6 +198,9 @@ Como conclusión personal ambos podemos decir que la realización de este trabaj
 
 ------------------------------------------------------------------
 ------------------------------------------------------------------
+LINK DEL VIDEO:https://drive.google.com/file/d/1x1-Ny4PGTyX2m9b6mVQSnl4ltPseQc1O/view?usp=drivesdk
+
+
 
 ## Integrantes:
 
