@@ -196,6 +196,12 @@ Finalmente el usuario decide terminar la sesión.
 ## CONCLUSIÓN PERSONAL
 Como conclusión personal ambos podemos decir que la realización de este trabajo práctico integrador nos ayudó a comprender cada vez más la importancia de tener un codigo bien estructurado y a tener en cuenta lo eficiente que es a la hora de trabajar en equipo sobre un mismo proyecto ya que es una forma de simplificar la lectura del codigo al no tener todo en un mismo archivo.py y junto con las funciones lo hacen más sencillo de implementar. También hay que destacar que el tener un codigo modularizado permite facilitar la delegación de responsabilidades.
 
+
+------------------------------------------------------------------
+------------------------------------------------------------------
+
+LINK DEL VIDEO:https://drive.google.com/file/d/1x1-Ny4PGTyX2m9b6mVQSnl4ltPseQc1O/view?usp=drivesdk
+
 ------------------------------------------------------------------
 ------------------------------------------------------------------
 
